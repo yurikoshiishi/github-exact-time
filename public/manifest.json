@@ -1,33 +1,16 @@
 {
   "manifest_version": 2,
-
-  "name": "Chrome Extension TypeScript Starter",
-  "description": "Chrome Extension, TypeScript, Visual Studio Code",
+  "name": "Github Exact Time",
+  "description": "See exact timestamps in Github commits, comments, etc.",
   "version": "1.0",
-
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-
   "content_scripts": [
-      {
-          "matches": ["<all_urls>"],
-          "js": ["js/vendor.js", "js/content_script.js"]
-      }
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["js/vendor.js", "js/content_script.js"]
+    }
   ],
-
-  "background": {
-    "scripts": ["js/vendor.js", "js/background.js"]
+  "icons": {
+    "128": "icon_128.png"
   },
-
-  "permissions": [
-    "storage",
-    "<all_urls>"
-  ]
+  "permissions": ["*://github.com/*"]
 }
