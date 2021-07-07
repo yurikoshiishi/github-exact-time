@@ -6,11 +6,10 @@
   "content_scripts": [
     {
       "matches": ["*://github.com/*"],
-      "js": ["js/vendor.js", "js/content_script.js"]
+      "js": ["js/content_script.js"]
     }
   ],
   "icons": {
     "128": "icon_128.png"
-  },
-  "permissions": ["*://github.com/*"]
+  }
 }
